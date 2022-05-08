@@ -1,12 +1,16 @@
+; Written in 2019 by Rob McMullen, https://playermissile.com/dli_tutorial/
+; Copyright and related rights waived via CC0: https://creativecommons.org/publicdomain/zero/1.0/
+; Updated for assembly with MADS by Ed Salisbury 2022/05/07
+
 	org $3000
 
-SDLSTL = $0230
+	icl "hardware.s"
 
 init
 	lda #<dlist
-    sta sdlstl
+    sta SDLSTL
     lda #>dlist
-    sta sdlstl+1
+    sta SDLSTL+1
 
 forever
 	jmp forever
